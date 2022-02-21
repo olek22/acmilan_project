@@ -18,7 +18,14 @@
         <h2>Number of clubs in database: {{ clubs|length }}</h2>
 
         {% for club in clubs %}
-            <p>{{ club }}</p>
+            <h3>{{ club }}</h3>
+            <p>{{ club.name }}</p>
+            <p>{{ club.year }}</p>
+            <p>{{ club.stadium_with_capacity }}</p>
+            <p>{{ club.colors }}</p>
+            <p>{{ club.nickname }}</p>
+            <p>{{ club.web_site }}</p>
+            <p>{{ club.description }}</p>
         {% endfor %}
 
     {% endif %}
