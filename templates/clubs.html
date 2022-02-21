@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'style_css/style.css' %}">
 </head>
 <body>
-
+    <a href="{% url 'create_club' %}">Add club</a><br><br>
     {% if clubs|length == 0 %}
         <h2> Database is empty </h2>
     {% else %}
@@ -19,13 +19,14 @@
 
         {% for club in clubs %}
             <h3>{{ club }}</h3>
-            <p>{{ club.name }}</p>
             <p>{{ club.year }}</p>
             <p>{{ club.stadium_with_capacity }}</p>
             <p>{{ club.colors }}</p>
             <p>{{ club.nickname }}</p>
             <p>{{ club.web_site }}</p>
             <p>{{ club.description }}</p>
+            <a href="{% url 'update_club' club.id %}">Update</a> |
+            <a href="{% url 'delete_club' club.id %}">Delete</a>
         {% endfor %}
 
     {% endif %}
