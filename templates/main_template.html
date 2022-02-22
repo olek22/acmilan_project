@@ -45,7 +45,7 @@
          </ul>
          <ul class="nav navbar-nav navbar-right">
              {% if user.is_authenticated %}
-                <li><a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> {{ user.username }}</a></li>
+                <li><a id="przycisk"><span class="glyphicon glyphicon-log-in"></span> {{ user.username }}</a></li>
                 <li><a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
             {% else %}
                 <li><a id="przycisk" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -59,9 +59,11 @@
     <div class="container">
         <section>
     <div class="container">
+      <a href="{% url 'all_clubs' %}">
       <h2  id="naglowek" class="text-danger" data-anijs="if: scroll, on: window, do: zoomInUp animated, before: $scrollReveal">
           {% block view_name %} {% endblock %}<span class="glyphicon glyphicon-music"></span>
       </h2>
+      </a>
         <br/>
         {% block body %}
 
@@ -73,7 +75,7 @@
 </section>
 
 
-
+<nav class="navbar-fixed-bottom">
 <footer class="container text-center">
     <div class="row">
         <div class="col-md-2">
@@ -91,10 +93,12 @@
             <a href="https://www.facebook.com/ACMilan/"><img src="img/2.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
           </div>
 </footer>
+</nav>
+
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" id="modal-dialog">
           <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" arialabel="Close"><span ariahidden="true">&times;</span></button>
               <h4 class="text-danger" >POLITYKA PRYWATNOŚCI</h4>

@@ -5,15 +5,24 @@
 {% block view_name %} Serie A clubs {% endblock %}
 
 {% block body %}
-    <a href="{% url 'create_club' %}">
-        <input id="baton" type="submit" class="btn btn-danger" value="Add Club"/>
-    </a>
-    <br><br>
+<!--    <a href="{% url 'create_club' %}">-->
+<!--        <input id="baton" type="submit" class="btn btn-danger" value="Add Club"/>-->
+<!--    </a>-->
     {% if clubs|length == 0 %}
-        <h2> Database is empty </h2>
+    <p>
+        <h3> Database is empty </h3>
+        <a href="{% url 'create_club' %}">
+            <input id="baton" type="submit" class="btn btn-danger" value="Add Club"/>
+        </a>
+    </p>
     {% else %}
-        <h2>Number of clubs in database: {{ clubs|length }}</h2>
 
+    <p>
+        <h3>Number of clubs in database: {{ clubs|length }}</h3>
+        <a href="{% url 'create_club' %}">
+            <input id="baton" type="submit" class="btn btn-danger" value="Add Club"/>
+        </a>
+    </p>
         {% for club in clubs %}
             <h3>{{ club }}</h3>
             <p>

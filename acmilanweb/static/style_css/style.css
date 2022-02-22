@@ -5,16 +5,15 @@ body
     background:#000000;
     font-family: 'Roboto', sans-serif;
  }
- 
+
  .carousel-inner img {
     margin: auto;
     width: 100%;
   }
- 
+
  footer {
     background-color:	black;
     color: white;
-    padding: 15px;
     font-family: 'Roboto', sans-serif;
   }
 #napis{
@@ -30,8 +29,8 @@ body
 {
     column-count:2;
     column-width:auto;
-    
-    
+
+
 }
 #wyszukiwanie{
     background-color: #ffffff;
@@ -64,11 +63,12 @@ body
 
 .button
 {
-    color: #a94442;;
+    color: #a94442;
+    border: none;
 }
-
-#ikonka1 , #ikonka2, #ikonka3 , #ikonka4, #ikonka5 , #ikonka6 { 
+#ikonka1 , #ikonka2, #ikonka3 , #ikonka4, #ikonka5 , #ikonka6 {
     color: #a94442;;
+
     }
 
 #przycisk1 , #przycisk2, #przycisk3 , #przycisk4, #przycisk5 , #przycisk6 {
@@ -87,12 +87,10 @@ body
     outline: none ;
     border: none;
 }
-
 #przycisk:hover
 {
     color:#a94442;
 }
-
 #zolte
 {
 
@@ -103,10 +101,21 @@ body
 
 #polityka
 {
-    color: black;
+    background-color: black;
+    color: white;
+    padding: 15px;
     font-family: 'Open Sans', sans-serif;
+    text-align: justify;
 }
 
+.modal-content  {
+    background-color: black;
+    border-color: #a94442;
+}
+
+.close {
+    color: white;
+}
 
 #baton:hover
 {
@@ -117,7 +126,7 @@ body
     border: none;
 }
 
-/*Kod odpowiedzialny za wyglad i dzialanie 
+/*Kod odpowiedzialny za wyglad i dzialanie
 okienka w podstronie "Biblioteki"
 */
 
@@ -125,6 +134,7 @@ okienka w podstronie "Biblioteki"
 	margin: 20px auto;
 	width: 300px;
 }
+
 
 .question-screen {
 	background-color: #a94442;
@@ -136,7 +146,7 @@ okienka w podstronie "Biblioteki"
 .app-title {
 	text-align: center;
     color: black;
-    
+
 }
 
 .question-form {
@@ -167,7 +177,7 @@ input:focus {
 }
 
 #questionButton {
-	border: 2px solid transparent;
+    border: none;
 	background: #a94442;
 	color: #ffffff;
 	font-size: 16px;
