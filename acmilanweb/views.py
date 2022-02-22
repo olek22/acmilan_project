@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
 from acmilanweb.models import Club
-from  .forms import ClubForm
+from .forms import ClubForm
+from django.contrib.auth.decorators import login_required
+
 
 def all_clubs(request):
     clubs = Club.objects.all()
     #how_many_teams = len(clubs)
     return render(request, 'clubs.html', {'clubs': clubs,})
 
+@login_required
 def new_club(request):
     form = ClubForm(request.POST or None, request.FILES or None)
 
@@ -17,6 +19,7 @@ def new_club(request):
 
     return render(request, 'club_form.html', {'form': form})
 
+@login_required
 def update_club(request, id):
     club = get_object_or_404(Club, pk=id) # Club.object.get(id=id)
     form = ClubForm(request.POST or None, request.FILES or None, instance=club)
@@ -28,6 +31,7 @@ def update_club(request, id):
 
     return render(request, 'club_form.html', {'form': form})
 
+@login_required
 def delete_club(request, id):
     club = get_object_or_404(Club, pk=id) # Club.object.get(id=id)
 

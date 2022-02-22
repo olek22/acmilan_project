@@ -1,17 +1,14 @@
-{% load static %}
+{% extends 'main_template.html' %}
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'style_css/style.css' %}">
-</head>
-<body>
-    <a href="{% url 'create_club' %}">Add club</a><br><br>
+{% block title %} Serie A clubs {% endblock %}
+
+{% block view_name %} Serie A clubs {% endblock %}
+
+{% block body %}
+    <a href="{% url 'create_club' %}">
+        <input id="baton" type="submit" class="btn btn-danger" value="Add Club"/>
+    </a>
+    <br><br>
     {% if clubs|length == 0 %}
         <h2> Database is empty </h2>
     {% else %}
@@ -19,18 +16,18 @@
 
         {% for club in clubs %}
             <h3>{{ club }}</h3>
-            <p>{{ club.year }}</p>
-            <p>{{ club.stadium_with_capacity }}</p>
-            <p>{{ club.colors }}</p>
-            <p>{{ club.nickname }}</p>
-            <p>{{ club.web_site }}</p>
-            <p>{{ club.description }}</p>
-            <a href="{% url 'update_club' club.id %}">Update</a> |
-            <a href="{% url 'delete_club' club.id %}">Delete</a>
+            <p>
+                <a href="{% url 'update_club' club.id %}">
+                    <button id="baton" type="button" class="btn btn-danger" >More</button>
+                </a>
+                <a href="{% url 'update_club' club.id %}">
+                    <button id="baton" type="button" class="btn btn-danger" >Update</button>
+                </a>
+                <a href="{% url 'delete_club' club.id %}">
+                    <button id="baton" type="button" class="btn btn-danger" >Delete</button>
+                </a>
+            <p/>
         {% endfor %}
 
     {% endif %}
-
-
-</body>
-</html>
+{% endblock %}

@@ -8,7 +8,7 @@ class Club(models.Model):
      stadium_capacity = models.PositiveIntegerField(null=True, blank=True)
      colors = models.CharField(max_length=64, blank=True, null=True)
      nickname = models.CharField(max_length=64, blank=True, null=True)
-     web_site = models.URLField(max_length=200, blank=True)
+     web_site = models.URLField(max_length=200, blank=True, null=True)
      description = models.TextField(default="")
      club_crest = models.ImageField(upload_to="club_crest", blank=True)
 

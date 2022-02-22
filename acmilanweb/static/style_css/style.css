@@ -1,6 +1,7 @@
 body
 {
-    font-size:18px; color:#ffffff;
+    font-size:18px;
+    color:#ffffff;
     background:#000000;
     font-family: 'Roboto', sans-serif;
  }
@@ -59,15 +60,15 @@ body
 {
     font-size: 100%;
     background-color:	black;
-} 
+}
 
 .button
 {
     color: #a94442;;
 }
+
 #ikonka1 , #ikonka2, #ikonka3 , #ikonka4, #ikonka5 , #ikonka6 { 
     color: #a94442;;
-    
     }
 
 #przycisk1 , #przycisk2, #przycisk3 , #przycisk4, #przycisk5 , #przycisk6 {
@@ -86,10 +87,12 @@ body
     outline: none ;
     border: none;
 }
+
 #przycisk:hover
 {
     color:#a94442;
 }
+
 #zolte
 {
 
@@ -101,10 +104,9 @@ body
 #polityka
 {
     color: black;
-    padding: 5%;
     font-family: 'Open Sans', sans-serif;
-
 }
+
 
 #baton:hover
 {
@@ -115,8 +117,6 @@ body
     border: none;
 }
 
-
-
 /*Kod odpowiedzialny za wyglad i dzialanie 
 okienka w podstronie "Biblioteki"
 */
@@ -125,6 +125,7 @@ okienka w podstronie "Biblioteki"
 	margin: 20px auto;
 	width: 300px;
 }
+
 .question-screen {
 	background-color: #a94442;
     padding: 10px;
@@ -141,6 +142,7 @@ okienka w podstronie "Biblioteki"
 .question-form {
 	text-align: center;
 }
+
 .control-group {
 	margin-bottom: 10px;
 }

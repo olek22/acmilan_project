@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html ng-app="portfolioApp">
+<html lang="en">
+<head>
+  <title>{% block title %} {% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/forms.js"></script>
+  <link href="{% static 'style_css/bootstrap.min.css' %}" rel="stylesheet">
+  <script src="{% static 'js/angular.min.js' %}"></script>
+  <script src="{% static 'js/controllers.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'style_css/style.css' %}">
+  <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css">
+  <script src="{% static 'js/typed.js' %}"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+<div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" ariaexpanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><div id="logo">
+                            <img src="img/mil.png" >
+       </div> </a>
+       </div>
+       <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav text-right">
+         <li><a  id="przycisk1" href="#main-page"  class="btn btn-primary" ><span  id="ikonka1" data-anijs="if: mouseover, on:#ikonka1 ,do: swing animated" class="glyphicon glyphicon-star-empty" ></span>  O projekcie</a></li>
+         <li><a id="przycisk2" href="#hymn" title="Hymn"  class="btn btn-primary"><span id="ikonka2" data-anijs="if: mouseover, on:#ikonka2 ,do: swing animated" class="glyphicon glyphicon-music"></span>    Hymn</a>
+         <li><a id="przycisk3" href="#formularz" title="Formularz" class="btn btn-primary"><span id="ikonka3" data-anijs="if: mouseover, on:#ikonka3 ,do: swing animated" class="glyphicon glyphicon-envelope"></span>  Formularz</a>
+         <li><a id="przycisk4" href="#galeria" title="Galeria" class="btn btn-primary"><span id="ikonka4" data-anijs="if: mouseover, on:#ikonka4 ,do: swing animated" class="glyphicon glyphicon-picture"></span>  Galeria</a>
+         <li><a id="przycisk5" href="#ciekawostki" class="btn btn-primary" title="Ciekawostki"><span id="ikonka5" data-anijs="if: mouseover, on:#ikonka5 ,do: swing animated" class="glyphicon glyphicon-education"></span>  Ciekawostki</a>
+         <li><a id="przycisk6" href="#biblioteki" class="btn btn-primary" title="AC Milan"><span id="ikonka6" data-anijs="if: mouseover, on:#ikonka6 ,do: swing animated" class="glyphicon glyphicon-book"></span>  Biblioteki</a>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+             {% if user.is_authenticated %}
+                <li><a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> {{ user.username }}</a></li>
+                <li><a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            {% else %}
+                <li><a id="przycisk" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            {% endif %}
+        </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="main-page" class="jumbotron">
+    <div class="container">
+        <section>
+    <div class="container">
+      <h2  id="naglowek" class="text-danger" data-anijs="if: scroll, on: window, do: zoomInUp animated, before: $scrollReveal">
+          {% block view_name %} {% endblock %}<span class="glyphicon glyphicon-music"></span>
+      </h2>
+        <br/>
+        {% block body %}
+
+        {% endblock %}
+    </div>
+  </section>
+
+    </div>
+</section>
+
+
+
+<footer class="container text-center">
+    <div class="row">
+        <div class="col-md-2">
+          <button id="baton" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+            Polityka prywatności
+          </button> </div>
+        <div class="col-md-7"><id="naglowek" class="text-danger">@ copyright by Aleksander Gola</id></div>
+        <div class="col-md-1">
+            <a href="https://twitter.com/acmilan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="img/1.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
+          </div>
+          <div class="col-md-1">
+            <a href="https://www.youtube.com/channel/UCKcx1uK38H4AOkmfv4ywlrg"><img src="img/3.png" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
+          </div>
+          <div class="col-md-1">
+            <a href="https://www.facebook.com/ACMilan/"><img src="img/2.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
+          </div>
+</footer>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" arialabel="Close"><span ariahidden="true">&times;</span></button>
+              <h4 class="text-danger" >POLITYKA PRYWATNOŚCI</h4>
+          </div>
+          <div id=class="modal-body">
+            <p id="polityka">
+                Informujemy, że w ramach Serwisu mogą zostać zamieszczone zewnętrzne linki umożliwiające jego Użytkownikom bezpośrednie
+                dotarcie do innych stron internetowych bądź też podczas korzystania z Serwisu w Państwa urządzeniu mogą być dodatkowo
+                umieszczone pliki Cookies pochodzące od innych podmiotów w szczególności od dostawców takich jak: Facebook, Twitter itp.,
+                w celu umożliwienia Państwu skorzystania z funkcjonalności Serwisu zintegrowanych z tymi serwisami.
+                <br/><br/>
+                Każdy z dostawców określa zasady korzystania z plików Cookies w swojej polityce prywatności w związku z czym nie mamy wpływu
+                na prowadzoną przez dostawców politykę prywatności oraz wykorzystywania plików Cookies.
+                <br/><br/>
+                Ze względów bezpieczeństwa zalecamy, aby przed skorzystaniem z zasobów
+                oferowanych przez inne strony internetowe lub serwisy, każdy Użytkownik zapoznał się z dokumentem dotyczącym polityki prywatności
+                oraz wykorzystywania plików Cookies, jeżeli zostały one udostępnione, a w razie ich braku skontaktował się z administratorem danej
+                strony lub serwisu w celu uzyskania informacji w tym zakresie.
+            </p>
+          </div>
+          <div class="modal-footer">
+              <button id="baton" type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
