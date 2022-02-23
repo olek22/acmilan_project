@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#"><div id="logo">
-                            <img src="img/mil.png" >
+                            <img src="/media/img/mil.png" >
        </div> </a>
        </div>
        <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -47,7 +47,7 @@
          </ul>
          <ul class="nav navbar-nav navbar-right">
              {% if user.is_authenticated %}
-                <li><a id="przycisk"><span class="glyphicon glyphicon-user"></span> {{ user.username }}</a></li>
+                <li><a id="przycisk"><span class="glyphicon glyphicon-user"></span></a></li>
                 <li><a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             {% else %}
                 <li><a id="przycisk" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -77,20 +77,20 @@
 
 <nav class="navbar-fixed-bottom">
 <footer class="container text-center">
-    <div class="row">
+    <div class="row" style="margin-bottom: 10px">
         <div class="col-md-2">
           <button id="baton" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
             Polityka prywatności
           </button> </div>
         <div class="col-md-7"><id="naglowek" class="text-danger">@ copyright by Aleksander Gola</id></div>
         <div class="col-md-1">
-            <a href="https://twitter.com/acmilan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="img/1.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
+            <a href="https://twitter.com/acmilan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="/media/img/1.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
           </div>
           <div class="col-md-1">
-            <a href="https://www.youtube.com/channel/UCKcx1uK38H4AOkmfv4ywlrg"><img src="img/3.png" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
+            <a href="https://www.youtube.com/channel/UCKcx1uK38H4AOkmfv4ywlrg"><img src="/media/img/3.png" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
           </div>
           <div class="col-md-1">
-            <a href="https://www.facebook.com/ACMilan/"><img src="img/2.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
+            <a href="https://www.facebook.com/ACMilan/"><img src="/media/img/2.jpg" class="img-circle center-block img-responsie" alt="Kwadrat" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></a>
           </div>
 </footer>
 </nav>
