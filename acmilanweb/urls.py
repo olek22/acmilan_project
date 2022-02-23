@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from .views import all_clubs, new_club, update_club, delete_club
+from .views import all_clubs, new_club, update_club, delete_club,main
 
 
 urlpatterns = [
+    path('', main, name="main"),
     path('seriea_clubs/', all_clubs, name="all_clubs"),
     path('seriea_clubs/create', new_club, name="create_club"),
     path('seriea_clubs/update/<int:id>/', update_club, name="update_club"),

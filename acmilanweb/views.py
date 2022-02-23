@@ -3,6 +3,8 @@ from acmilanweb.models import Club
 from .forms import ClubForm
 from django.contrib.auth.decorators import login_required
 
+def main(request):
+    return render(request, 'main.html')
 
 def all_clubs(request):
     clubs = Club.objects.all()
