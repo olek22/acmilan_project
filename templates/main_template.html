@@ -1,5 +1,4 @@
 {% load static %}
-{% load bootstrap3 %}
 
 <!DOCTYPE html>
 <html ng-app="portfolioApp">
@@ -15,7 +14,9 @@
   <script type="text/javascript" src="js/forms.js"></script>
   <link rel="stylesheet" href="{% static 'style_css/bootstrap.min.css' %}">
   <script src="{% static 'js/angular.min.js' %}"></script>
-<!--  <script src="{% static 'js/controllers.js' %}"></script>-->
+<!--   {% if 'gallery' in request.get_full_path %}-->
+<!--        <script src="{% static 'js/controllers.js' %}"></script>-->
+<!--   {% endif %}-->
   <link rel="stylesheet" href="{% static 'style_css/style.css' %}">
   <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css">
   <script src="{% static 'js/typed.js' %}"></script>
@@ -37,17 +38,17 @@
        </div>
        <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav text-right">
-         <li><a id="przycisk1" href="#main-page"  class="btn btn-primary" ><i  id="ikonka1" data-anijs="if: mouseover, on:#ikonka1 ,do: swing animated" class="glyphicon glyphicon-star-empty" ></i>  O projekcie</a></li>
-         <li><a id="przycisk2" href="#hymn" title="Hymn"  class="btn btn-primary"><span id="ikonka2" data-anijs="if: mouseover, on:#ikonka2 ,do: swing animated" class="glyphicon glyphicon-music"></span>    Hymn</a>
-         <li><a id="przycisk3" href="#formularz" title="Formularz" class="btn btn-primary"><span id="ikonka3" data-anijs="if: mouseover, on:#ikonka3 ,do: swing animated" class="glyphicon glyphicon-envelope"></span>  Formularz</a>
-         <li><a id="przycisk4" href="#galeria" title="Galeria" class="btn btn-primary"><span id="ikonka4" data-anijs="if: mouseover, on:#ikonka4 ,do: swing animated" class="glyphicon glyphicon-picture"></span>  Galeria</a>
-         <li><a id="przycisk5" href="#ciekawostki" class="btn btn-primary" title="Ciekawostki"><span id="ikonka5" data-anijs="if: mouseover, on:#ikonka5 ,do: swing animated" class="glyphicon glyphicon-education"></span>  Ciekawostki</a>
-         <li><a id="przycisk6" href="#biblioteki" class="btn btn-primary" title="AC Milan"><span id="ikonka6" data-anijs="if: mouseover, on:#ikonka6 ,do: swing animated" class="glyphicon glyphicon-book"></span>  Biblioteki</a>
+         <li><a id="przycisk1" href=""  class="btn btn-primary" ><i  id="ikonka1" data-anijs="if: mouseover, on:#ikonka1 ,do: swing animated" class="glyphicon glyphicon-modal-window" ></i> Strona główna</a></li>
+         <li><a id="przycisk2" href="#hymn" title="Hymn"  class="btn btn-primary"><span id="ikonka2" data-anijs="if: mouseover, on:#ikonka2 ,do: swing animated" class="glyphicon glyphicon-music"></span> Hymn</a>
+         <li><a id="przycisk3" href="#formularz" title="Formularz" class="btn btn-primary"><span id="ikonka3" data-anijs="if: mouseover, on:#ikonka3 ,do: swing animated" class="glyphicon glyphicon-envelope"></span> Formularz</a>
+         <li><a id="przycisk4" href="#galeria" title="Galeria" class="btn btn-primary"><span id="ikonka4" data-anijs="if: mouseover, on:#ikonka4 ,do: swing animated" class="glyphicon glyphicon-picture"></span> Galeria</a>
+         <li><a id="przycisk5" href="#ciekawostki" class="btn btn-primary" title="Ciekawostki"><span id="ikonka5" data-anijs="if: mouseover, on:#ikonka5 ,do: swing animated" class="glyphicon glyphicon-education"></span> Ciekawostki</a>
+         <li><a id="przycisk6" href="#biblioteki" class="btn btn-primary" title="AC Milan"><span id="ikonka6" data-anijs="if: mouseover, on:#ikonka6 ,do: swing animated" class="glyphicon glyphicon-book"></span> Biblioteki</a>
          </ul>
          <ul class="nav navbar-nav navbar-right">
              {% if user.is_authenticated %}
-                <li><a id="przycisk"><span class="glyphicon glyphicon-log-in"></span> {{ user.username }}</a></li>
-                <li><a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                <li><a id="przycisk"><span class="glyphicon glyphicon-user"></span> {{ user.username }}</a></li>
+                <li><a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             {% else %}
                 <li><a id="przycisk" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             {% endif %}
@@ -61,7 +62,7 @@
         <section>
     <div class="container">
       <h2  id="naglowek" class="text-danger" data-anijs="if: scroll, on: window, do: zoomInUp animated, before: $scrollReveal">
-          {% block view_name %} {% endblock %}<span class="glyphicon glyphicon-music"></span>
+          {% block view_name %} {% endblock %}{% block view_icon %} {% endblock %}
       </h2>
         <br/>
         {% block body %}

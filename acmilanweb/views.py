@@ -42,3 +42,6 @@ def delete_club(request, id):
         return redirect(all_clubs)
 
     return render(request, 'confirm_delete.html', {'club': club})
+
+def gallery(request):
+    return render(request, 'gallery.html')
