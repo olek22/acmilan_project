@@ -1,3 +1,4 @@
+
 var portfolioApp = angular.module('portfolioApp',[]);
 
 portfolioApp.controller('GalleryListCtrl', function($scope)
@@ -6,7 +7,7 @@ portfolioApp.controller('GalleryListCtrl', function($scope)
     [
         { 'title':'Ateny',
         'when':'Maj 2007',
-        'thumbnailUrl':'/img/2007.jpg'
+        'thumbnailUrl':'/media/img/2007.jpg'
         },
         { 'title':'Manchester',
         'when':'Maj 2003',
@@ -22,11 +23,11 @@ portfolioApp.controller('GalleryListCtrl', function($scope)
         },
         { 'title':'Barcelona',
         'when':'Maj 1989',
-        'thumbnailUrl':'my_media/img/1990.jpg'
+        'thumbnailUrl':'/media/img/1990.jpg'
         },
         { 'title':'Madryt',
         'when':'Maj 1969',
-        'thumbnailUrl':'./my_media/img/1969.jpg'
+        'thumbnailUrl':'/media/img/1969.jpg'
         }
     ];
     $scope.sortList = 

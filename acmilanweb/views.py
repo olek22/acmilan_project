@@ -11,6 +11,9 @@ def all_clubs(request):
     #how_many_teams = len(clubs)
     return render(request, 'clubs.html', {'clubs': clubs,})
 
+def anthem(request):
+    return render(request, 'anthem.html')
+
 @login_required
 def new_club(request):
     form = ClubForm(request.POST or None, request.FILES or None)

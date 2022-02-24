@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/forms.js"></script>
+  <script type="text/javascript" src="{% static 'js/forms.js' %}"></script>
   <link rel="stylesheet" href="{% static 'style_css/bootstrap.min.css' %}">
   <script src="{% static 'js/angular.min.js' %}"></script>
 <!--   {% if 'gallery' in request.get_full_path %}-->
@@ -32,18 +32,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><div id="logo">
+        <a class="navbar-brand" href="{% url 'main' %}"><div id="logo">
                             <img src="/media/img/mil.png" >
        </div> </a>
        </div>
        <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav text-right">
-         <li><a id="przycisk1" href=""  class="btn btn-primary" ><i  id="ikonka1" data-anijs="if: mouseover, on:#ikonka1 ,do: swing animated" class="glyphicon glyphicon-modal-window" ></i> Strona główna</a></li>
-         <li><a id="przycisk2" href="#hymn" title="Hymn"  class="btn btn-primary"><span id="ikonka2" data-anijs="if: mouseover, on:#ikonka2 ,do: swing animated" class="glyphicon glyphicon-music"></span> Hymn</a>
+         <li><a id="przycisk1" href="{% url 'main' %}"  class="btn btn-primary" ><i  id="ikonka1" data-anijs="if: mouseover, on:#ikonka1 ,do: swing animated" class="glyphicon glyphicon-modal-window" ></i> Strona główna</a></li>
+         <li><a id="przycisk2" href="{% url 'anthem' %}" title="Hymn"  class="btn btn-primary"><span id="ikonka2" data-anijs="if: mouseover, on:#ikonka2 ,do: swing animated" class="glyphicon glyphicon-music"></span> Hymn</a>
          <li><a id="przycisk3" href="#formularz" title="Formularz" class="btn btn-primary"><span id="ikonka3" data-anijs="if: mouseover, on:#ikonka3 ,do: swing animated" class="glyphicon glyphicon-envelope"></span> Formularz</a>
-         <li><a id="przycisk4" href="#galeria" title="Galeria" class="btn btn-primary"><span id="ikonka4" data-anijs="if: mouseover, on:#ikonka4 ,do: swing animated" class="glyphicon glyphicon-picture"></span> Galeria</a>
+         <li><a id="przycisk4" href="{% url 'gallery' %}" title="Galeria" class="btn btn-primary"><span id="ikonka4" data-anijs="if: mouseover, on:#ikonka4 ,do: swing animated" class="glyphicon glyphicon-picture"></span> Galeria</a>
          <li><a id="przycisk5" href="#ciekawostki" class="btn btn-primary" title="Ciekawostki"><span id="ikonka5" data-anijs="if: mouseover, on:#ikonka5 ,do: swing animated" class="glyphicon glyphicon-education"></span> Ciekawostki</a>
-         <li><a id="przycisk6" href="#biblioteki" class="btn btn-primary" title="AC Milan"><span id="ikonka6" data-anijs="if: mouseover, on:#ikonka6 ,do: swing animated" class="glyphicon glyphicon-book"></span> Biblioteki</a>
+         <li><a id="przycisk6" href="{% url 'all_clubs' %}" class="btn btn-primary" title="AC Milan"><span id="ikonka6" data-anijs="if: mouseover, on:#ikonka6 ,do: swing animated" class="glyphicon glyphicon-book"></span> Kluby Serie A</a>
          </ul>
          <ul class="nav navbar-nav navbar-right">
              {% if user.is_authenticated %}
@@ -57,6 +57,10 @@
     </div>
 </nav>
 
+{% block head %} {% endblock %}
+
+{% url 'main' as main %}
+{% if not request.path == main %}
 <section id="main-page" class="jumbotron">
     <div class="container">
         <section>
@@ -77,6 +81,7 @@
 
 <nav class="navbar-fixed-bottom">
 <footer class="container text-center">
+<br>
     <div class="row" style="margin-bottom: 10px">
         <div class="col-md-2">
           <button id="baton" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
@@ -94,7 +99,7 @@
           </div>
 </footer>
 </nav>
-
+{% endif %}
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -128,3 +133,8 @@
 
 </body>
 </html>
+
+<script src="{% static 'js/anijs.js' %}"></script>
+<script src="{% static 'js/anijs-helper-scrollreveal.js' %}"></script>
+<script src="{% static 'js/anijs-helper-dom.js' %}"></script>
+<script src="{% static 'js/anijs-jquery-event-system.js' %}"></script>

@@ -7,6 +7,7 @@
 
 {% block body %}
 <script src="{% static 'js/controllers.js' %}"></script>
+{% verbatim %}
 <section id="galeria">
  <div class="container">
     <p>
@@ -16,9 +17,9 @@
 <section class="container" ng-controller="GalleryListCtrl">
   <div id="boxy">
     <div>
-      <p>Wyszukaj: </p>
-      <input id="wyszukiwanie" ng-model="query">
-      <p></p>
+       <p> Wyszukaj:
+      <input id="wyszukiwanie" ng-model="query"></p>
+    </p>
       <p ng-if="query"><p1>Wyniki wyszukiwania dla:</p1> {{query}}</p>
         <span ng-if="!query">
             <p></p>
@@ -26,12 +27,13 @@
         </span>
     </div>
     <div id="prawy">
-      <p>Sortuj: </p>
+      <p>Sortuj:
       <select id="sortowanie" ng-model="orderProp" ng-options="sort as sort.label for sort in sortList" >
           <option value="title">alfabetycznie</option>
           <option value="when">chronologicznie</option>
           <option value="-when">od najnowszych</option>
       </select>
+      </p>
       <p></p>
       <p ng-if="orderProp"><p1>Galerie ułożone:</p1> {{orderProp.label}}</p>
     </div>
@@ -40,9 +42,10 @@
     <div class="col-sm-4 text-center" ng-repeat="gallery in galleries | filter: query | orderBy: orderProp.value">
       <img src="{{gallery.thumbnailUrl}}" class="img-rounded center-block img-responsie" alt="" height=200 width=200>
       <h3>{{gallery.title}}</h3>
-      <p>Kiedy: {{gallery.when}}</p>
+      <p>{{gallery.when}}</p>
     </div>
   </div>
 </section>
+{% endverbatim %}
 
 {% endblock %}
