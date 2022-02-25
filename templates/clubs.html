@@ -27,15 +27,16 @@
             <h3>{{ club }}</h3>
             <p>
                 <a href="{% url 'update_club' club.id %}">
-                    <button id="baton" type="button" class="btn btn-danger" >More</button>
+                    <span class="glyphicon glyphicon-list" style="color: #a94442"></span>
                 </a>
                 <a href="{% url 'update_club' club.id %}">
-                    <button id="baton" type="button" class="btn btn-danger" >Update</button>
+                    <span class="glyphicon glyphicon-edit" style="color: #a94442"></span>
                 </a>
                 <a href="{% url 'delete_club' club.id %}">
-                    <button id="baton" type="button" class="btn btn-danger" >Delete</button>
+                    <span class="glyphicon glyphicon-trash" style="color: #a94442"></span>
 
                 </a>
+<hr>
             <p/>
         {% endfor %}
 
