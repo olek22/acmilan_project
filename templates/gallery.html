@@ -14,29 +14,29 @@
         Galeria przedstawiająca zdjęcia ze zwycięskich finałów Ligi Mistrzów
     </p>
 </section>
+
 <section class="container" ng-controller="GalleryListCtrl">
-
-    <div>
-       <p> Wyszukaj:
-      <input id="wyszukiwanie" ng-model="query"></p>
-    </p>
-    </div>
-    <div>
-      <p>Sortuj:
-      <select id="sortowanie"  ng-model="orderProp" ng-options="sort as sort.label for sort in sortList" >
-          <option value="title">alfabetycznie</option>
-          <option value="when">chronologicznie</option>
-          <option value="-when">od najnowszych</option>
-      </select>
-      </p>
-    </div>
-
-      <p></p>
-    <div class="col-sm-4 text-center" ng-repeat="gallery in galleries | filter: query | orderBy: orderProp.value">
-      <img src="{{gallery.thumbnailUrl}}" class="img-rounded center-block img-responsie" alt="" height=200 width=200>
-      <h3>{{gallery.title}}</h3>
-      <p>{{gallery.when}}</p>
-    </div>
+<div class="row">
+        <div class="form-group col-md-3">
+          <p>Wyszukaj</p>
+          <input class="form-control" id="inputCity" ng-model="query">
+        </div>
+        <div class="form-group col-md-3">
+          <p>Sortuj</p>
+          <select id="inputState" class="form-control" ng-model="orderProp" ng-options="sort as sort.label for sort in sortList">
+              <option value="title">alfabetycznie</option>
+              <option value="when">chronologicznie</option>
+              <option value="-when">od najnowszych</option>
+          </select>
+        </div>
+</div>
+    <br>
+<div class="boxy">
+        <div class="col-sm-4 text-center" ng-repeat="gallery in galleries | filter: query | orderBy: orderProp.value">
+          <img src="{{gallery.thumbnailUrl}}" class="img-rounded center-block img-responsie" alt="" height=200 width=200>
+          <h3>{{gallery.title}}</h3>
+          <p>{{gallery.when}}</p>
+        </div>
   </div>
 </section>
 {% endverbatim %}
