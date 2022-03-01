@@ -11,6 +11,9 @@ def all_clubs(request):
     #how_many_teams = len(clubs)
     return render(request, 'clubs.html', {'clubs': clubs,})
 
+def trivia(request):
+    return render(request, 'trivia.html')
+
 def anthem(request):
     return render(request, 'anthem.html')
 
