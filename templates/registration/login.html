@@ -2,7 +2,7 @@
 {% load bootstrap %}
 {% block title %} Login {% endblock %}
 
-{% block view_name %} Login {% endblock %}{% block view_icon %} <span class="glyphicon glyphicon-user"></span> {% endblock %}
+{% block view_name %} Login {% endblock %}{% block view_icon %} <span class="glyphicon glyphicon-log-in"></span> {% endblock %}
 
 {% block body %}
     <div class="panel panel-default">
@@ -12,8 +12,13 @@
         {% csrf_token %}
         {{ form|bootstrap }}
         <br>
-        <input id="baton" type="submit" class="btn btn-danger" value="Login "</input>
+        <input id="baton" type="submit" class="btn btn-danger" value="Login " style="margin-bottom: 20px"></input>
     </form>
+        <form action="{% url 'register' %}">
+            <input id="baton" type="submit" class="btn btn-danger" value="Register" style="margin-bottom: 10px"/>
+        </form>
+        <p align="center" ><a href="{% url 'login' %}" style="color: #a94442; font-size: 16px">Forgot your password? Click here</a></p>
+
   </div>
 </div>
 

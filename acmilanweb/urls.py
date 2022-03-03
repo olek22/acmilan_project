@@ -1,10 +1,12 @@
 from django.contrib import admin
 from django.urls import path
-from .views import all_clubs, new_club, update_club, delete_club,main, gallery, anthem, trivia
+from .views import all_clubs, new_club, update_club, delete_club,main, gallery, anthem, trivia, register, user
 
 
 urlpatterns = [
     path('', main, name="main"),
+    path('user/', user, name="user"),
+    path('register/', register, name="register"),
     path('gallery/', gallery, name="gallery"),
     path('seriea_clubs/', all_clubs, name="all_clubs"),
     path('trivia/', trivia, name="trivia"),

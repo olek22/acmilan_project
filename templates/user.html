@@ -1,0 +1,28 @@
+{% extends 'main_template.html' %}
+{% load bootstrap %}
+{% block title %} Login {% endblock %}
+
+{% block view_name %} User {% endblock %}{% block view_icon %} <span class="glyphicon glyphicon-user"></span> {% endblock %}
+
+{% block body %}
+
+    <div class="panel panel-default">
+  <div class="panel-body" id="panelek">
+    <form method="post">
+
+        {% csrf_token %}
+        <p><label>Username: </label> {{ user.username }}</p>
+        <p><label>E-mail: </label> {{ user.email }}</p>
+        <p><label>First name: </label> {{ user.first_name }}</p>
+        <p><label>Last name: </label> {{ user.last_name }}</p>
+        <p><label>Date of birth: </label> {{ user.profile.date_of_birth }}</p>
+        <p><label>Location: </label> {{ user.profile.location }}</p>
+        <p><label>Date joined: </label> {{ user.date_joined }}</p>
+        <p><label>Last login: </label> {{ user.last_login }}</p>
+        <a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-edit" style="color: #a94442"></span>
+        <a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out" style="color: #a94442"></span></a>
+        <a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-trash" style="color: #a94442"></span></a>
+  </div>
+</div>
+
+{% endblock %}
