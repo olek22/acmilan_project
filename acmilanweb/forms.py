@@ -1,8 +1,9 @@
-from django.forms import ModelForm, EmailField, CharField
+from django.forms import ModelForm, EmailField, CharField, DateField, SelectDateWidget, NumberInput
 from django.contrib.auth.models import User
+# from django.contrib.admin.widgets import SelectDateWidget
 from django.contrib.auth.forms import UserCreationForm
 from .models import Club, Profile
-
+from datetime import date
 class ClubForm(ModelForm):
     class Meta:
         model = Club
@@ -12,6 +13,7 @@ class ExtendedUserCreationForm(UserCreationForm):
     email = EmailField(required=True)
     first_name = CharField(max_length=30)
     last_name = CharField(max_length=30)
+
 
     class Meta:
         model = User
@@ -33,3 +35,7 @@ class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         fields = ('location', 'date_of_birth')
+
+    years = [x for x in range(1900,date.today().year)]
+
+    date_of_birth = DateField(widget=NumberInput(attrs={'type': 'date'}), required=False)

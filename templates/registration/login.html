@@ -5,8 +5,7 @@
 {% block view_name %} Login {% endblock %}{% block view_icon %} <span class="glyphicon glyphicon-log-in"></span> {% endblock %}
 
 {% block body %}
-    <div class="panel panel-default">
-  <div class="panel-body" id="panelek">
+
     <form method="post">
 
         {% csrf_token %}
@@ -17,9 +16,8 @@
         <form action="{% url 'register' %}">
             <input id="baton" type="submit" class="btn btn-danger" value="Register" style="margin-bottom: 10px"/>
         </form>
-        <p align="center" ><a href="{% url 'login' %}" style="color: #a94442; font-size: 16px">Forgot your password? Click here</a></p>
+        <p><a href="{% url 'login' %}" style="color: #a94442; font-size: 16px">Forgot your password? Click here!</a></p>
 
-  </div>
-</div>
+
 
 {% endblock %}

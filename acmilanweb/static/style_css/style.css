@@ -186,7 +186,6 @@ okienka w podstronie "Biblioteki"
 }
 
 input {
-	text-align: center;
 	background-color: black;
 	border: 2px solid transparent;
 	border-radius: 3px;
@@ -256,6 +255,15 @@ input:focus {
 }
 
 
+ /*REGISTER & LOGIN & CREATE_CLUB FORMs
+*/
+#id_last_name, #id_first_name, #id_password1, #id_password2,#id_password,
+#id_username, #id_email, #id_location, #id_date_of_birth, #id_name,
+#id_date_of_birth_day, #id_date_of_birth_month, #id_date_of_birth_year,
+#id_year, #id_stadium, #id_stadium_capacity, #id_colors, #id_nickname,
+#id_web_site, #id_club_crest, #id_club_crest-clear{
+    width: 250px;
+}
 
-
-
+ /*END REGISTER FORM
+*/
