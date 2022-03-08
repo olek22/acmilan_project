@@ -9,10 +9,10 @@
     <form method="post" action="{% url 'register' %}">
 
         {% csrf_token %}
+        <p><a href="{% url 'login' %}" style="color: #a94442; font-size: 16px">Do You have an account? Login here</a></p>
         {{ form|bootstrap }}
         {{ profile_form|bootstrap }}
         <br>
         <input id="baton" type="submit" class="btn btn-danger" value="Register " style="margin-bottom: 20px"></input>
     </form>
-    <p><a href="{% url 'login' %}" style="color: #a94442; font-size: 16px">Do You have an account? Login here</a></p>
 {% endblock %}

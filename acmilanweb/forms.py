@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Club, Profile
 from datetime import date
+
+
 class ClubForm(ModelForm):
     class Meta:
         model = Club
@@ -39,3 +41,4 @@ class ProfileForm(ModelForm):
     years = [x for x in range(1900,date.today().year)]
 
     date_of_birth = DateField(widget=NumberInput(attrs={'type': 'date'}), required=False)
+

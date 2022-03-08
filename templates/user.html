@@ -18,7 +18,6 @@
         <p><label>Location: </label> {{ user.profile.location }}</p>
         <p><label>Date joined: </label> {{ user.date_joined }}</p>
         <p><label>Last login: </label> {{ user.last_login }}</p>
-        <a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-edit" style="color: #a94442"></span>
         <a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out" style="color: #a94442"></span></a>
         <a id="przycisk" data-href="/delete" data-toggle="modal" data-target="#confirm-delete" style="cursor: pointer"><span class="glyphicon glyphicon-trash" style="color: #a94442"></span></a>
 
@@ -35,7 +34,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
+                <button type="submit" onclick="location.href='{% url 'delete_user' %}'" class="btn btn-danger" data-dismiss="modal">Delete</button>
             </div>
         </div>
     </div>

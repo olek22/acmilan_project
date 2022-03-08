@@ -5,7 +5,7 @@
 {% block view_name %} Login {% endblock %}
 
 {% block body %}
-    <h1>Club {{ club }} will be deleted. Are You sure? </h1>
+    <p>Club {{ club }} will be deleted. Are You sure? </p>
     <form method = "post">
         {% csrf_token %}
         <input id="baton" type="submit" class="btn btn-danger" value="Delete"/>
