@@ -28,7 +28,7 @@
         {% for club in clubs %}
             <h3>{{ club }}</h3>
             <p>
-                <a href="{% url 'update_club' club.id %}">
+                <a href="{% url 'info_club' club.id %}">
                     <span class="glyphicon glyphicon-list" style="color: #a94442"></span>
                 </a>
                 {% if user.is_authenticated %}

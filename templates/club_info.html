@@ -1,0 +1,32 @@
+{% extends 'main_template.html' %}
+{% load bootstrap %}
+{% block title %} Login {% endblock %}
+
+<row class>
+{% block view_name %} {{ club }} {% endblock %}{% block view_icon %}
+            <img src="/media/{{ photo }}" class="img-circle img-responsie" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated">
+    {% endblock %}
+</row>
+
+{% block body %}
+
+
+    <form method="post">
+
+        {% csrf_token %}
+        {% for key, value in club_info %}
+        <p><label>{{ key }}</label>: {{ value }}</p>
+        {% endfor %}
+<!--        <p><label>Username: </label> {{ club.name }}</p>-->
+
+    </form>
+                    {% if user.is_authenticated %}
+                <a href="{% url 'update_club' club.id %}">
+                    <span class="glyphicon glyphicon-edit" style="color: #a94442"></span>
+                </a>
+                <a href="{% url 'delete_club' club.id %}">
+                    <span class="glyphicon glyphicon-trash" style="color: #a94442"></span>
+                </a>
+                {% endif %}
+
+{% endblock %}
