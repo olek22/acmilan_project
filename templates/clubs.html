@@ -2,7 +2,7 @@
 
 {% block title %} Serie A clubs {% endblock %}
 
-{% block view_name %} Serie A clubs {% endblock %}
+{% block view_name %} Serie A clubs {% endblock %}{% block view_icon %} <span class="glyphicon glyphicon-list-alt"></span> {% endblock %}
 
 {% block body %}
 <!--    <a href="{% url 'create_club' %}">-->
@@ -26,7 +26,7 @@
         {% endif %}
     </p>
         {% for club in clubs %}
-            <h3>{{ club }}</h3>
+            <h3>{{ club }}<img src="/media/{{ club.club_crest }}" class="img-circle img-responsie" height=60 width=60 data-anijs="if: mouseover, do: rubberBand animated"></h3>
             <p>
                 <a href="{% url 'info_club' club.id %}">
                     <span class="glyphicon glyphicon-list" style="color: #a94442"></span>
