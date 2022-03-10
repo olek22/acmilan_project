@@ -4,14 +4,26 @@ from .forms import ClubForm, ExtendedUserCreationForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 
 def main(request):
     return render(request, 'main.html')
 
+def info_club(request, id):
+    club = get_object_or_404(Club, pk=id)
+    club_dict = {x: y for (x, y) in club.__dict__.items() if len(str(y)) > 0}
+    photo = club_dict['club_crest']
+    del club_dict['id'], club_dict['_state'], club_dict['club_crest']
+    club_info = [(k.capitalize().replace('_', ' '),v) for k,v in club_dict.items()]
+    # print(club_info)
+    # print(photo)
+
+
+    return render(request, 'club_info.html', {'club_info': club_info, 'club':club, 'photo':photo})
+
 def all_clubs(request):
     clubs = Club.objects.all()
-    #how_many_teams = len(clubs)
-    return render(request, 'clubs.html', {'clubs': clubs,})
+    return render(request, 'clubs.html', {'clubs': clubs})
 
 def trivia(request):
     return render(request, 'trivia.html')
@@ -83,3 +95,12 @@ def gallery(request):
 @login_required
 def user(request):
     return render(request, 'user.html')
+
+@login_required
+def delete_user(request):
+    current_user = request.user.id
+    user = get_object_or_404(User, pk=current_user)
+    print(user)
+    user.delete()
+
+    return redirect(main)
