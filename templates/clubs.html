@@ -21,8 +21,9 @@
         <h3>Number of clubs in database: {{ clubs|length }}</h3>
         {% if user.is_authenticated %}
         <a href="{% url 'create_club' %}">
-            <input id="baton" type="submit" class="btn btn-danger" value="Add Club"/>
+            <input id="baton" type="submit" class="btn btn-danger" value="Add Club" />
         </a>
+
         {% endif %}
     </p>
         {% for club in clubs %}
