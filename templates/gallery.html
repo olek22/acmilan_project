@@ -11,22 +11,22 @@
 <section id="galeria">
  <div class="container">
     <p>
-        Galeria przedstawiająca zdjęcia ze zwycięskich finałów Ligi Mistrzów
+        Gallery shows winning Champions League finals by AC Milan.
     </p>
 </section>
 
 <section class="container" ng-controller="GalleryListCtrl">
 <div class="row">
         <div class="form-group col-md-3">
-          <p>Wyszukaj</p>
+          <p>Search</p>
           <input class="form-control" id="inputCity" ng-model="query">
         </div>
         <div class="form-group col-md-3">
-          <p>Sortuj</p>
+          <p>Sort</p>
           <select id="inputState" class="form-control" ng-model="orderProp" ng-options="sort as sort.label for sort in sortList">
-              <option value="title">alfabetycznie</option>
-              <option value="when">chronologicznie</option>
-              <option value="-when">od najnowszych</option>
+              <option value="title">alphabetic</option>
+              <option value="when">chronological</option>
+              <option value="-when">latest</option>
           </select>
         </div>
 </div>

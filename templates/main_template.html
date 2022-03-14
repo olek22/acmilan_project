@@ -39,11 +39,11 @@
        </div>
        <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav text-right">
-         <li><a id="przycisk1" href="{% url 'main' %}"  class="btn btn-primary" ><i  id="ikonka1" data-anijs="if: mouseover, on:#ikonka1 ,do: swing animated" class="glyphicon glyphicon-modal-window" ></i> Strona główna</a></li>
-         <li><a id="przycisk2" href="{% url 'anthem' %}" title="Hymn"  class="btn btn-primary"><span id="ikonka2" data-anijs="if: mouseover, on:#ikonka2 ,do: swing animated" class="glyphicon glyphicon-music"></span> Hymn</a>
-         <li><a id="przycisk4" href="{% url 'gallery' %}" title="Galeria" class="btn btn-primary"><span id="ikonka4" data-anijs="if: mouseover, on:#ikonka4 ,do: swing animated" class="glyphicon glyphicon-picture"></span> Galeria</a>
-         <li><a id="przycisk5" href="{% url 'trivia' %}" class="btn btn-primary" title="Ciekawostki"><span id="ikonka5" data-anijs="if: mouseover, on:#ikonka5 ,do: swing animated" class="glyphicon glyphicon-align-justify"></span> Ciekawostki</a>
-         <li><a id="przycisk6" href="{% url 'all_clubs' %}" class="btn btn-primary" title="AC Milan"><span id="ikonka6" data-anijs="if: mouseover, on:#ikonka6 ,do: swing animated" class="glyphicon glyphicon-list-alt"></span> Kluby Serie A</a>
+         <li><a id="przycisk1" href="{% url 'main' %}"  class="btn btn-primary" ><i  id="ikonka1" data-anijs="if: mouseover, on:#ikonka1 ,do: swing animated" class="glyphicon glyphicon-modal-window" ></i> Homepage</a></li>
+         <li><a id="przycisk2" href="{% url 'anthem' %}" title="Hymn"  class="btn btn-primary"><span id="ikonka2" data-anijs="if: mouseover, on:#ikonka2 ,do: swing animated" class="glyphicon glyphicon-music"></span> Anthem</a>
+         <li><a id="przycisk4" href="{% url 'gallery' %}" title="Galeria" class="btn btn-primary"><span id="ikonka4" data-anijs="if: mouseover, on:#ikonka4 ,do: swing animated" class="glyphicon glyphicon-picture"></span> Gallery</a>
+         <li><a id="przycisk5" href="{% url 'trivia' %}" class="btn btn-primary" title="Ciekawostki"><span id="ikonka5" data-anijs="if: mouseover, on:#ikonka5 ,do: swing animated" class="glyphicon glyphicon-align-justify"></span> Trivia</a>
+         <li><a id="przycisk6" href="{% url 'all_clubs' %}" class="btn btn-primary" title="AC Milan"><span id="ikonka6" data-anijs="if: mouseover, on:#ikonka6 ,do: swing animated" class="glyphicon glyphicon-list-alt"></span> Serie A clubs</a>
          </ul>
          <ul class="nav navbar-nav navbar-right">
              {% if user.is_authenticated %}
@@ -85,7 +85,7 @@
     <div class="row" style="margin-bottom: 10px">
         <div class="col-md-2">
           <button id="baton" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-            Polityka prywatności
+            Privacy policy
           </button> </div>
         <div class="col-md-7"><id="naglowek" class="text-danger">@ copyright by Aleksander Gola</id></div>
         <div class="col-md-1">
@@ -106,26 +106,17 @@
         <div class="modal-content" id="modal-dialog">
           <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" arialabel="Close"><span ariahidden="true">&times;</span></button>
-              <h4 class="text-danger" >POLITYKA PRYWATNOŚCI</h4>
+              <h4 class="text-danger" >PRIVACY POLICY</h4>
           </div>
           <div id=class="modal-body">
             <p id="polityka">
-                Informujemy, że w ramach Serwisu mogą zostać zamieszczone zewnętrzne linki umożliwiające jego Użytkownikom bezpośrednie
-                dotarcie do innych stron internetowych bądź też podczas korzystania z Serwisu w Państwa urządzeniu mogą być dodatkowo
-                umieszczone pliki Cookies pochodzące od innych podmiotów w szczególności od dostawców takich jak: Facebook, Twitter itp.,
-                w celu umożliwienia Państwu skorzystania z funkcjonalności Serwisu zintegrowanych z tymi serwisami.
+                When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control.
                 <br/><br/>
-                Każdy z dostawców określa zasady korzystania z plików Cookies w swojej polityce prywatności w związku z czym nie mamy wpływu
-                na prowadzoną przez dostawców politykę prywatności oraz wykorzystywania plików Cookies.
-                <br/><br/>
-                Ze względów bezpieczeństwa zalecamy, aby przed skorzystaniem z zasobów
-                oferowanych przez inne strony internetowe lub serwisy, każdy Użytkownik zapoznał się z dokumentem dotyczącym polityki prywatności
-                oraz wykorzystywania plików Cookies, jeżeli zostały one udostępnione, a w razie ich braku skontaktował się z administratorem danej
-                strony lub serwisu w celu uzyskania informacji w tym zakresie.
+                This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information.
             </p>
           </div>
           <div class="modal-footer">
-              <button id="baton" type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>
+              <button id="baton" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
