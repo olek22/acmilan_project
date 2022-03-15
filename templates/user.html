@@ -18,8 +18,22 @@
         <p><label>Location: </label> {{ user.profile.location }}</p>
         <p><label>Date joined: </label> {{ user.date_joined }}</p>
         <p><label>Last login: </label> {{ user.last_login }}</p>
-        <a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out" style="color: #a94442"></span></a>
-        <a id="przycisk" data-href="/delete" data-toggle="modal" data-target="#confirm-delete" style="cursor: pointer"><span class="glyphicon glyphicon-trash" style="color: #a94442"></span></a>
+
+        <p>
+            <div class="dropdown">
+              <span class="glyphicon glyphicon-edit" id="dropdownMenu1" data-toggle="dropdown" style="color: #a94442; background-color:black;">
+              </span>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="{% url 'edit_user' %}">Edit settings</a></li>
+                <li><a href="{% url 'edit_profile' %}">Edit profile</a></li>
+              </ul>
+            &nbsp;<a id="przycisk" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out" style="color: #a94442"></span></a>
+            &nbsp;<a id="przycisk" data-href="/delete" data-toggle="modal" data-target="#confirm-delete" style="cursor: pointer"><span class="glyphicon glyphicon-trash" style="color: #a94442"></span></a>
+
+        </p>
+
+
+
 
     </form>
 

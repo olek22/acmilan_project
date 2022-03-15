@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from .views import all_clubs, new_club, update_club, delete_club,main, gallery, anthem, trivia, register, user, delete_user, info_club
+from .views import ProfileEditView,UserEditView, all_clubs, new_club, update_club, delete_club,main, gallery, anthem, trivia, register, user, delete_user, info_club, PasswordsChangeView
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 
 
 urlpatterns = [
@@ -9,6 +10,9 @@ urlpatterns = [
 
     path('user/', user, name="user"),
     path('user/delete_user/', delete_user, name="delete_user"),
+    path('user/edit_user/', login_required(UserEditView.as_view()), name="edit_user"),
+    path('user/edit_profile/', login_required(ProfileEditView.as_view()), name="edit_profile"),
+    path('user/password/', login_required(PasswordsChangeView.as_view(template_name='registration/edit_password.html'))),
     path('register/', register, name="register"),
 
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name='reset_password/reset_password.html'), name='reset_password'),

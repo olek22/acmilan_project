@@ -1,0 +1,18 @@
+{% extends 'main_template.html' %}
+{% load bootstrap %}
+{% load i18n %}
+{% block title %} Edit {% endblock %}
+
+{% block view_name %} Edit {% endblock %}{% block view_icon %} <span class="glyphicon glyphicon-edit"></span> {% endblock %}
+
+{% block body %}
+<div class="form-group"></div>
+    <form method="POST">
+
+        {% csrf_token %}
+        {{ form | bootstrap}}
+        <br>
+        <input id="baton" type="submit" class="btn btn-danger" value="Edit " style="margin-bottom: 20px"></input>
+    </form>
+</div
+{% endblock %}

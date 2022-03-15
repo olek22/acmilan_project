@@ -1,13 +1,22 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from acmilanweb.models import Club, Profile
-from .forms import ClubForm, ExtendedUserCreationForm, ProfileForm
+from .forms import ClubForm, ExtendedUserCreationForm, ProfileForm, EditProfileForm, EditInfoForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth.models import User
+from django.views import generic
+from django.urls import reverse_lazy
 
 def main(request):
     return render(request, 'main.html')
+
+
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('main')
+
 
 def info_club(request, id):
     club = get_object_or_404(Club, pk=id)
@@ -72,7 +81,7 @@ def register(request):
         if form.is_valid() and profile_form.is_valid():
             user = form.save()
 
-            profile = profile_form.save(commit=False)
+            profile = profile_form.save(commit=False) # commit=False -> bez wysyłania do bazy danych
             profile.user = user
 
             profile.save()
@@ -87,6 +96,25 @@ def register(request):
         profile_form = ProfileForm()
 
     return render(request, 'registration/register.html', {'form' : form, 'profile_form': profile_form})
+
+
+class UserEditView(generic.UpdateView):
+    form_class = EditProfileForm
+    template_name = 'registration/edit_profile_page.html'
+    success_url = reverse_lazy('user')
+
+    def get_object(self):
+        return self.request.user
+
+class ProfileEditView(generic.UpdateView):
+    form_class = EditInfoForm
+    template_name = 'registration/edit_profile_info.html'
+    success_url = reverse_lazy('user')
+
+    def get_object(self):
+        return self.request.user.profile
+
+
 
 
 def gallery(request):
