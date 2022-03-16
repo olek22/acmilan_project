@@ -13,8 +13,6 @@ boto
 bottleneck
 brotlipy
 comtypes
-conda-package-handling
-conda-token
 contextlib2
 cython
 cytoolz
