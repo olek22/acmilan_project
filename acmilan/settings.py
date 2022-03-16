@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['acmilan-rossoneri-app.herokuapp.com','localhost:8000']
 
 
 # Application definition
@@ -72,7 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'acmilan.wsgi.application'
 
-default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, db.sqlite3)
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
 
 
@@ -111,7 +111,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-#STATICFILES_DIRS = ['moje_static']
+STATIC_ROOT = os.path.join(BASE_DIR, 'my_static')
+STATICFILES_DIRS = ['my_static']
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'my_media'
@@ -131,5 +132,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'golatestapp@gmail.com'
-EMAIL_HOST_PASSWORD = 'Test123!'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
