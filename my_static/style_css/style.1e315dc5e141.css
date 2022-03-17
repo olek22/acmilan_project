@@ -1,0 +1,291 @@
+body
+{
+    font-size:18px;
+    color:#ffffff;
+    background:#000000;
+    font-family: 'Roboto', sans-serif;
+ }
+
+ .carousel-inner img {
+    margin: auto;
+    width: 100%;
+  }
+
+ footer {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+  }
+#napis{
+    color: #a94442;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#naglowek{
+    font-size: 50px ;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#boxy
+{
+    column-count:2;
+    column-width:auto;
+
+
+}
+#wyszukiwanie{
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    width: 20%;
+}
+#sortowanie{
+    color: #000000;
+    width: 20%;
+}
+#boxy{
+    column-count:2;
+}
+#prawy
+{
+    text-align: right;
+}
+
+/*Login
+*/
+
+.thumbnail {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+   transition: 0.3s;
+   min-width: 40%;
+   border-radius: 5px;
+ }
+
+ .thumbnail-description {
+   min-height: 40px;
+ }
+
+ .thumbnail:hover {
+   cursor: pointer;
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+ }
+
+
+ .panel
+ {
+    background-color: black;
+    width: 38rem;
+ }
+
+ /*koniec Login
+*/
+
+#spol{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron
+{
+    font-size: 100%;
+    background-color:	black;
+}
+
+.button
+{
+    color: #a94442;
+    border: none;
+}
+#ikonka1 , #ikonka2, #ikonka3 , #ikonka4, #ikonka5 , #ikonka6 {
+    color: #a94442;;
+
+    }
+
+#przycisk1 , #przycisk2, #przycisk3 , #przycisk4, #przycisk5 , #przycisk6 {
+	float: left;
+	font-size: 18px;
+    background-color: #222;
+    opacity: 0.8;
+    border: none;
+}
+
+#przycisk1:hover , #przycisk2:hover, #przycisk3:hover , #przycisk4:hover, #przycisk5:hover , #przycisk6:hover
+{
+	background-color: #f9f64a;
+    cursor: pointer;
+    color: #a94442;
+    outline: none ;
+    border: none;
+}
+#przycisk:hover
+{
+    color:#a94442;
+}
+#zolte
+{
+
+    color: #f9f64a;
+    outline: none ;
+    border: none;
+}
+
+#polityka
+{
+    background-color: black;
+    color: white;
+    padding: 15px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+}
+
+.modal-content  {
+    background-color: black;
+    border-color: #a94442;
+}
+
+.close {
+    color: white;
+}
+
+#baton:hover
+{
+    background-color: #f9f64a;
+    cursor: pointer;
+    color: #a94442;
+    outline: none ;
+    border: none;
+}
+
+/*Kod odpowiedzialny za wyglad i dzialanie
+okienka w podstronie "Biblioteki"
+*/
+
+.question {
+	margin: 20px auto;
+	width: 300px;
+}
+
+
+.question-screen {
+	background-color: #a94442;
+    padding: 10px;
+    padding-bottom: 40px;
+	border-radius: 5px
+}
+
+.app-title {
+	text-align: center;
+    color: black;
+
+}
+
+.question-form {
+	text-align: center;
+}
+
+.control-group {
+	margin-bottom: 10px;
+}
+
+input {
+	background-color: black;
+	border: 2px solid transparent;
+	border-radius: 3px;
+	font-size: 16px;
+	font-weight: 200;
+	padding: 10px 0;
+	width: 250px;
+	-webkit-transition: border .5s;
+    transition: border .5s;
+    color: white;
+}
+
+input:focus {
+	border: 2px solid #f9f64a;
+	box-shadow: none;
+}
+
+#questionButton {
+    border: none;
+	background: #a94442;
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 25px;
+	padding: 10px 0;
+	text-decoration: none;
+	text-shadow: none;
+	border-radius: 3px;
+	box-shadow: 12;
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
+	display: block;
+	width: 250px;
+    margin: 0 auto;
+    border-color: black;
+}
+
+#questionButton:hover {
+    background-color: #f9f64a;
+    color: #a94442;
+}
+
+.bad {
+	-webkit-animation-name: color_change;
+	animation-name: color_change;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+}
+
+@-webkit-keyframes color_change {
+	from { border-color: white; color: #FF6530;}
+	to { border-color: #FF6530; color: #FF6530;}
+}
+
+@-moz-keyframes color_change {
+	from { border-color: white; color: #FF6530;}
+	to { border-color: #FF6530; color: #FF6530;}
+}
+@-o-keyframes color_change {
+	from { border-color: white; color: #FF6530;}
+	to { border-color: #FF6530; color: #FF6530;}
+}
+@keyframes color_change {
+	from { border-color: white; color: #FF6530;}
+	to { border-color: #FF6530; color: #FF6530;}
+}
+
+
+ /*REGISTER & LOGIN & CREATE_CLUB FORMs
+*/
+#id_last_name, #id_first_name, #id_password1, #id_password2,#id_password,
+#id_username, #id_email, #id_location, #id_date_of_birth, #id_name,
+#id_date_of_birth_day, #id_date_of_birth_month, #id_date_of_birth_year,
+#id_year, #id_stadium, #id_stadium_capacity, #id_colors, #id_nickname, #id_old_password,
+#id_web_site, #id_club_crest, #id_club_crest-clear, #id_new_password1, #id_new_password2{
+    width: 250px;
+}
+
+ /*END REGISTER FORM
+*/
+
+.dropdown-menu
+{
+    background-color: black;
+}
+
+.dropdown-menu:hover
+{
+    background-color: black;
+}
+
+.dropdown-menu>li>a
+{
+    background-color: black;
+    color: #a94442;
+    padding-left: 2px;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #a94442;
+    background-color: black;
+}
