@@ -5,6 +5,7 @@
 {% block view_name %} Serie A clubs {% endblock %}
 
 {% block body %}
+    <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|bootstrap }}
     {% if 'create' in request.get_full_path %}
@@ -12,4 +13,5 @@
     {% else %}
         <input id="baton" type="submit" class="btn btn-danger" value="Update"/>
     {% endif %}
+    </form>
 {% endblock %}
