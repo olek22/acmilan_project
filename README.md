@@ -10,7 +10,7 @@
 
 ## Short project description
 
-App for the fans of  the best Italian football league. The application allows you to know the anthem of AC Milan, interesting facts about the club and information about league rivals. In the app we can also find gallery which shows all wins in Champions League final by AC Milan. 
+App for the fans of  the best Italian football league. The application allows you to know the anthem of AC Milan, interesting facts about the club and informations about league rivals. In the app we can also find gallery which shows all wins in Champions League final by AC Milan. 
 
 ## Technology
 
@@ -23,10 +23,11 @@ App for the fans of  the best Italian football league. The application allows yo
 ## Feauters
 
 User can:
-- check all users ranking
-- satrt quiz (user have to translate words to polish)
-- change passwords
-- send notification concerns word in quiz
+- see the gallery
+- to get to know AC Milan anthem
+- to get to know trivia about AC Milan
+- see informations about league rivals
+- create an account
 
 User with account can:
 - have same feauters as user without account
