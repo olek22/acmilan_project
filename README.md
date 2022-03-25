@@ -24,21 +24,21 @@ App for the fans of  the best Italian football league. The application allows yo
 
 User can:
 - check all users ranking
-- satrt quiz (user have to translate word to polish)
-- change password
+- satrt quiz (user have to translate words to polish)
+- change passwords
 - send notification concerns word in quiz
 
 User with account can:
-- same feauters as user without account
-- manage usser account
+- have same feauters as user without account
+- manage user's account
 - manage profile
 - manage league rivals (create, update, delete informations about league rivals in database)
 
 ## Usage
 
-The main page of the application presents photo galleries in the form of a carousel. From the menu, you can go to the views of anthem, trivia, gallery (where You can use search and sort). The application also allows you to create an account and log in to extend the functionality of the application. Clicking on the user icon allows you to go to the login or registration views. The data entered there are validated. If you've forgotten your password, that's fine. You will receive an email to associate a new password with your account.
+The main page of the application presents photo galleries in the form of a carousel. From the menu, you can go to the views of anthem, trivia, gallery (where you can use search and sort). The application also allows you to create an account and log in to extend the functionality of the application. Clicking on the user icon allows you to go to the login or registration views. The data entered there are validated. If you've forgotten your password, that's fine. You will receive an email to associate a new password with your account.
 
-If You have account and You are login, You can also manage informations about league rivals in database from the application. Then there is possibility to add, update or delete club in database. After login, You can also gain access to your account view where you can edit informations and account settings.
+If you have an account and you are login, You can also manage informations about league rivals in database from the application. Then there is possibility to add, update or delete club in database. After login, You can also gain access to your account view where you can edit informations and account settings.
 
 ## License & copyright
 
