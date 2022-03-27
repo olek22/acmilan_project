@@ -41,6 +41,9 @@ The main page of the application presents photo galleries in the form of a carou
 
 If you have an account and you are login, You can also manage informations about league rivals in database from the application. Then there is possibility to add, update or delete club in database. After login, You can also gain access to your account view where you can edit informations and account settings.
 
+![2022-03-27 15-46-24](https://user-images.githubusercontent.com/56295726/160284924-9c8e5ef8-9cb0-4643-9e8e-aae3f7864b00.gif)
+
+
 ## License & copyright
 
 Copyright (c) 2022 Aleksander Gola
